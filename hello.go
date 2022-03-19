@@ -4,12 +4,9 @@ import (
 	"fmt"
 )
 
-func split(some int) (x, y int) {
-	x = some * 4 / 9
-	y = some - x
-	return
-}
+var i, j int = 1, 2
 
 func main() {
-	fmt.Println(split(17))
+	var c, python, java = true, false, "no!"
+	fmt.Println(i, j, c, python, java)
 }
