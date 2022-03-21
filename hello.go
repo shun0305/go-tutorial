@@ -3,20 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	a := make([]int, 5)
-	printSlice("a", a)
+	m := make(map[string]int)
 
-	b := make([]int, 0, 5)
-	printSlice("b", b)
+	m["Answer"] = 42
+	fmt.Println("The value:", m["Answer"])
 
-	c := b[:2]
-	printSlice("c", c)
+	m["Answer"] = 48
+	fmt.Println("The value:", m["Answer"])
 
-	d := c[2:5]
-	printSlice("d", d)
-}
+	delete(m, "Answer")
+	fmt.Println("The value:", m["Answer"])
 
-func printSlice(s string, x []int) {
-	fmt.Printf("%s len=%d cap=%d %v\n",
-		s, len(x), cap(x), x)
+	v, ok := m["Answer"]
+	fmt.Println("The value:", v, "Present?", ok)
 }
